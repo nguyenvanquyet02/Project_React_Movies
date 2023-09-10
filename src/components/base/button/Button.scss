@@ -1,0 +1,39 @@
+// buton type
+
+.rounded {
+  color: #000;
+  border-radius: 99px;
+  box-shadow: 0 2px 8px rgb(0 0 0/6%);
+  border-color: rgba(22, 24, 35, 0.12);
+
+  &:hover {
+    background-color: rgba(22, 24, 35, 0.03);
+  }
+}
+
+.primary {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+
+  &:hover {
+    background: #1a73e8;
+  }
+}
+
+.outline {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+
+  &:hover {
+    background: #eef4ff;
+  }
+}
+
+.normal {
+  border-color: #e0e0e0;
+  color: #000;
+
+  &:hover {
+    background: #f4f5f8;
+  }
+}
