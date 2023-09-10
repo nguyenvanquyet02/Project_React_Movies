@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import useSWR from 'swr';
 import { SwiperSlide, Swiper } from 'swiper/react'
 import { fetcher, tmdbApi } from '../config/config';
+import { withErrorBoundary } from "react-error-boundary";
 import MovieCard from '../components/movie/MovieCard';
 
 const MovieDetail = () => {
@@ -178,4 +179,14 @@ function MovieSimilar() {
         </div>
     )
 } */}
-export default MovieDetail;
+function fallbackRender({ error }) {
+    return (
+        <div role="alert">
+            <p>Something went wrong: </p>
+            <pre style={{ color: "red" }}>{error.message}</pre>
+        </div>
+    );
+}
+export default withErrorBoundary(MovieDetail, {
+    FallbackComponent: fallbackRender
+});
