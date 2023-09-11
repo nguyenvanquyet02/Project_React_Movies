@@ -29,6 +29,9 @@ function App() {
             <Route path="/movies/:movieId" element={
               <MovieDetail></MovieDetail>
             }></Route>
+            <Route path="*" element={
+              <div className="text-center">Hello, My name is Nguyen Van Quyet, this page is not pound. </div>
+            }></Route>
           </Route>
         </Routes>
       </Suspense>

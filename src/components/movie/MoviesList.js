@@ -7,7 +7,7 @@ import Proptypes from 'prop-types'
 import { withErrorBoundary } from "react-error-boundary";
 
 const MoviesList = ({ type = "now_playing" }) => {
-    const { data, error, isLoading } = useSWR(tmdbApi.getMovieList(type), fetcher);
+    const { data, isLoading } = useSWR(tmdbApi.getMovieList(type), fetcher);
 
     const movies = data?.results || [];
 
